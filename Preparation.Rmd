@@ -3,6 +3,7 @@ title: "Preparation workshop Zurich 14. - 16. July "
 author:
 - Sonja Hartnack
 - Valerie Hungerbühler
+
 date: "`r Sys.Date()`"
 output:
   pdf_document: default
