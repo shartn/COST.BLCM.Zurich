@@ -1,0 +1,14 @@
+model{
+  # Likelihood part:
+  for(i in 1:TotalTests){
+    Status[i] ~ dbern(prevalence)
+  }
+
+  # Prior part:
+  prevalence ~ dbeta(1, 1)
+  
+  # Hooks for automatic integration with R:
+  #data# Status, TotalTests
+  #monitor# prevalence
+  #inits# prevalence
+}

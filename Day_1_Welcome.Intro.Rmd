@@ -1,0 +1,180 @@
+---
+title:  "Cost BLCM Workshop - Welcome and Intro"
+author:
+- Sonja Hartnack
+- Valerie Hungerbühler
+
+date: "`r Sys.Date()`"
+
+output:
+  beamer_presentation: default
+  slidy_presentation: default
+  ioslides_presentation: default
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+set.seed(1104)
+```
+
+## Welcome
+
+Please introduce yourself
+
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\klicker.pdf)
+
+## Learning aims
+
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\learningaims.pdf)
+
+## Schedule today
+
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\day1.pdf)
+
+
+## Schedule tomorrow
+
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\day2.pdf)
+
+## Schedule Friday
+
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\day3.pdf)
+
+## Some Housekeeping
+- Please sign the attendance sheet every day
+- Please wear masks inside all buildings
+- Please keep distance 1.5 m
+- In case you get sick with COVID-19 symptoms, please leave
+
+
+## Some Housekeeping
+Please fill in the google doc for the reimbursement:
+
+       https://forms.gle/PKgm5wZdko5fmFMm7 
+## WLAN
+
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\wlan.pdf)
+
+## Evaluation of diagnostic test accuracies
+
+## Evaluation of diagnostic test accuracies
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\drame.pdf)
+
+## Evaluation of diagnostic test accuracies
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\cassaniti.pdf)
+
+
+## Evaluation of diagnostic test accuracies
+- «… indeed, when an existing test is considered as a reference, this suggests that the test in question is always correct, and that all misclassifications (false negatives, false positives) are due to the new test…»
+- «Consequently, the new test will **never** be able to achieve sensitivity of 100%, since it is considered responsible for all misclassifications.»
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\drame.pdf)
+
+
+## Recap on diagnostic test accuracies
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\sesp.pdf)
+
+## Recap on diagnostic test accuracies
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\sesp1.pdf)
+
+## Recap on diagnostic test accuracies
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\sesp2.pdf)
+
+## Evaluation of diagnostic test accuracies in the absence of a true gold standard
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\jmv.pdf)
+
+## Historical sketch LCM
+
+* 1980 Hui-Walter paradigm
+
+. . .
+
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\hw1.pdf)
+
+## Terminology *latent*
+- The true infection status of an individual is unobserved, hence *latent*
+- Instead of individuas being explicitely classified as *infected* or *uninfected*, each individual is assumed to have a probability of infection, given the combination of an observed diagnostic test outcome, knowledge on sensitivity and specificity and prior knowledge of disease prevalence in the population of interest (Cheung et al. 2021).
+- In a BLCM *latent* does mean soemthing different as in a "latent herpes infection".
+
+
+## Historical sketch LCM
+
+* 1980 Hui-Walter paradigm
+
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\hw2.pdf)
+
+## Historical sketch LCM
+
+* 1980 Hui-Walter paradigm
+
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\hw3.pdf)
+
+## Historical sketch LCM
+
+* 1980 Hui-Walter paradigm
+
+* 1985 Vacek The effect of conditional dependence on the evaluation of diagnostic tests
+
+## Historical sketch LCM
+
+* 1980 Hui-Walter paradigm
+
+* 1985 Vacek The effect of conditional dependence on the evaluation of diagnostic tests
+
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\berkvens.pdf)
+
+
+
+## Historical sketch BLCM
+* 1980 Hui-Walter paradigm
+
+* 1985 Vacek The effect of conditional dependence on the evaluation of diagnostic tests
+
+* 1995 Joseph et al.  Bayesian estimation of disease prevalence and the parameters of diagnostic tests in the absence of a gold standard
+
+  * prevalence $\pi = P(D+)$, sensitivity $Se_i = P(T_i+|D+)$, specificity $Sp_i = P(T_i-|D-)$
+  * prior beta distributions $\pi \sim Beta(a_\pi,b_\pi)$, $Se_i \sim Beta(a_{Se_i},b_{Se_i})$,$Sp_i \sim Beta(a_{Sp_i},b_{Sp_i})$  
+  * $posterior \propto likelihood \cdot prior$
+  
+  
+## Historical sketch BLCM
+* 1980 Hui-Walter paradigm
+
+* 1985 Vacek The effect of conditional dependence on the evaluation of diagnostic tests
+
+* 1995 Joseph et al.  Bayesian estimation of disease prevalence and the parameters of diagnostic tests in the absence of a gold standard
+  
+  
+. . .
+
+
+* 1997 Bayesian Using Gibbs Sampling (BUGS)
+
+. . .
+
+
+* 2000 Enoe et al. Estimation of sensitivity and specificity of diagnostic tests and disease prevalence when the true disease is unknown
+
+. . .
+
+
+* 2007 Plummer Just another Gibbs sampler (JAGS) 
+
+. . .
+
+* 2007 Toft et al. Assessing the convergence of Markov Chain Monte Carlo methods: an example from evaluation of diagnostic tests in absence of a gold standard 
+
+. . .
+
+* 2017 Kostoulas et al. STARD-BLCM: Standards for the Reporting of Diagnostic accuracy studies that use Bayesian Latent Class Models
+
+## BLCM are endorsed by OIE
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\oie.pdf)
+
+## Cheung et al., 2021
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\cheung.pdf)
+
+## End of intro
+
+Any questions so far?

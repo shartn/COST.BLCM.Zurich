@@ -1,0 +1,55 @@
+---
+title: "MCMC"
+author:
+- Sonja Hartnack
+- Valerie Hungerbühler
+output:
+  beamer_presentation: default
+  slidy_presentation: default
+  ioslides_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Markov chain
+- Definition: A random process that undergoes transitions from one state to another on a state space
+
+https://setosa.io/blog/2014/07/26/markov-chains/
+
+## Markov chain
+- Definition: A random process that undergoes transitions from one state to another on a state space
+
+https://setosa.io/blog/2014/07/26/markov-chains/
+
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\markov.pdf)
+
+## Markov chain
+- Markov property: A Markov chain possesses a property that is characterised as
+"memoryless": the probability of the next state depends only on
+the current state and not on the sequence of events that preceded
+it.
+- Markov property defined as:
+
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\mcprop.pdf)
+
+## Ergodicity
+
+- This means that during numerous iterations, the chain will explore every point (or possible state) and will do so proportionally to its probability.
+- To be considered ergodic, the Markov chain must be
+    - irreducible: for every state there is a positive probability of moving to any other state
+    - aperiodic: the chain must not get trapped in cycles
+    
+## Reversibility: reversible chains
+- For a stationary distribution $\pi$ and a transition matrix $P$, the reversibility condition can be written as
+$\pi(x)P(x,y) = \pi(y)P(y,x)$, for all $(x,y) \in S$
+
+## Link to Metropolis-Hastings and Gibbs
+
+In his famous paper from 1953, Metropolis showed how to construct a Markov chain with stationary distribution $\pi$ such that
+
+\[\pi(x)=p_x,x \in S\]
+
+Here the first step to obtaining the stationary distribution of a Markov chain is to prove that the probabilities of a distribution satisfy the reversibility condition.

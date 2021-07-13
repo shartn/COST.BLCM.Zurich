@@ -1,0 +1,124 @@
+---
+title: "Day 1 Hui Walter II"
+author:
+- Sonja Hartnack
+- Valerie Hungerbühler
+date: "`r Sys.Date()`"
+output:
+  beamer_presentation: default
+  slidy_presentation: default
+  ioslides_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 
+With some inspiration from Matt Denwood & Giles Innocent from a previous training
+
+## Recap Hui-Walter 
+
+- Model assumptions 
+    * The population is divided into two or more populations in which two or more tests are evaluated
+    * sensitivity and specificity are the same in all populations
+    * the tests are *conditionally independent* given the disease status.
+    
+## Criticism of the Hui-Walter paradigm assumption (1)
+- The assumption (1) of distinct prevalences is necessary for the Hui-Walter model because otherwise, the data can be collapsed into a single 2x2 table with only three degrees of freedom for estimation.
+- The smaller the difference between disease prevalences, the larger are the posterior credible intervals, indicating a loss in precision.
+- The smallest difference in prevalence assessed by simulation was 10\%. In case of rare diseases, it might be difficult to find populations with prevalences higher than 10\%.
+
+## Criticism of the Hui-Walter paradigm assumption (2)
+
+- In reality, the assumption of constant sensitivity and specificity is questionable as already illustrated in the figure. Here the same diagnostic tests have been applied in the same laboratory to experimentally and naturally infected cats. 
+
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\boenzli.pdf) 
+
+## Criticism of the Hui-Walter paradigm assumption (2)
+- If assumption (2) is not satisfied, the accuracies would differ between two populations, this would add four additional parameters to be estimated, while there are only three additional degrees of freedom. 
+- Sensitivity and specificity are assumed to vary with external factors. 
+- Sensitivity, for example, especially when detecting an infectious agent, may depend on the prevalence and the stage of disease. 
+- The occurrence of a so-called *spectrum bias* contradicts this assumption.
+
+## Criticism of the Hui-Walter paradigm assumption (3)
+- Assumption (3) demanding conditional independence was the first to be questioned by Vacek in 1985. 
+- Not accounting for potential conditional dependence may lead to misleading, biased estimates with a positive correlation leading to an over-estimation of the test accuracies and a negative of an under-estimation. 
+
+## Correlated test results
+- If there are two tests for detecting a disease, the results can interpreted in one of two ways:
+    - *series*, only animals that test positive to both tests are considered test positive.
+    - *parallel*, animal that test positive to at least one test are considered positive.
+- Series interpretation increases $Sp$, but decreases $Se$; whereas parallel testing increases $Se$ and decreases $Sp$
+
+## Example from Veterinary Epidemiologic research, 2nd ed., Dohoo, p. 111-113    
+- Test are considered conditionally independent if the probability of getting a given test results on one test does not depend on the result from the other test, given the disease status of the individual.
+- If tests are conditionally independent, the formulae for $Se$ and $Sp$ under parallel $(Se_p, Sp_p)$ and series $(Se_s,Sp_s)$ interpretation are:
+- $Se_p = Se_1 + Se_2 - (Se_1*Se_2)$
+- $Sp_p = Sp_1*Sp_2$
+- $Se_s = Se_1*Se_2$
+- $Sp_s = Sp_1 + Sp_2 - (Sp_1*Sp_2)$
+  
+## Example from Veterinary Epidemiologic research, 2nd ed., Dohoo, p. 111-113
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\ex5.8.pdf) 
+
+## Example from Veterinary Epidemiologic research, 2nd ed., Dohoo, p. 111-113
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\ex5.8r.pdf) 
+
+## Estimating covariances between test results
+- Using the $Se$ and $Sp$ estimates from the ISA example, the covariances in the $D+$ and the $D-$ groups are:
+    - $covar(+) = Se_s (obs) - (Se_1*Se_2) = 0.761 - 0.726 = 0.035$
+    - $covar(-) = Sp_p (obs) - (Sp_1*Sp_2) = 0.930 - 0.931 = -0.001$
+
+
+## Conditional dependencies
+- Conditional independence implies that given an animal is diseased (or not) the probability $P$ of positive (or negative) outcomes for T\textsubscript{1}, the test results of the first test, is the same -  regardless of the known outcome for the second test, T\textsubscript{2}.
+
+- Conditional dependence, in contrast, implies that
+\[P(T\textsubscript{1}\textsuperscript{+} \vert T\textsubscript{2}\textsuperscript{+}) \neq P(T\textsubscript{1}\textsuperscript{+} \vert T\textsubscript{2}\textsuperscript{--})\] and / or \[P(T\textsubscript{1}\textsuperscript{--} \vert T\textsubscript{2}\textsuperscript{--}) \neq P(T\textsubscript{1}\textsuperscript{--} \vert T\textsubscript{2}\textsuperscript{+})\]
+ \noindent
+- Seen from a biological perspective, conditional dependency between two diagnostic tests could occur if both tests are based on the same biological principle.
+- For example, the specificities of two ELISAs might be conditionally dependent because they are both affected by the same cross-reacting agent. Another example would be two PCRs utilising fecal material which might contain substances potentially inhibiting the PCR reaction. 
+
+## Conditional dependencies 
+- Obviously, conditional dependencies or covariances are additional parameters to be estimated, which in the frequentist situation (without any constraints put on the parameters) would lead to a non-identifiable problem (over-parameterisation). 
+- Whereas under the assumption of conditional independence at least three tests per sample allowing to estimate seven parameters are needed, under the assumption of conditional dependence 15 parameters need to estimated thus leading to non-identifiability. 
+
+## Conditional dependencies 
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\berkvens.pdf) 
+
+## Conditional dependencies 
+- Obviously, conditional dependencies or covariances are additional parameters to be estimated, which in the frequentist situation (without any constraints put on the parameters) would lead to a non-identifiable problem (over-parameterisation). 
+- Whereas under the assumption of conditional independence at least three tests per sample allowing to estimate seven parameters are needed, under the assumption of conditional dependence 15 parameters need to estimated thus leading to non-identifiability. 
+- It is of course vital, that the parameters of a latent class model are identifiable to obtain meaningful estimates.
+
+
+## Conditional dependencies
+- For example for two diagnostic tests named T\textsubscript{1} and T\textsubscript{2} the probabilities of the four different options of binary test results (+ +, + --, -- +, -- --) including also two conditional dependencies 
+    * $covs12$, the covariance between the sensitivities of test 1 and 2
+    * $covc12$, the covariance between specificities of test 1 and 2) could be modelled as follows:  	
+
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\covsc.pdf)  
+
+## Example of a COVID-19 data set
+
+![](C:\Users\shartn\Documents\Cost Harmony\Cost WS 2021\Trial files\jmv.pdf)
+
+## Example of a COVID-19 data set
+1. how to prepare the data set in the correct format
+     * create_data_cassaniti.R
+2. how to describe the model
+     * model_final.bug
+3. how to run the model in JAGS with runjags
+     * runjags.version.R
+4. how to check convergence
+5. how to analyse the data
+
+## Exercises
+- Ex.3
+    - Can you re-run the exercises?
+    - Assess what happens if you add other covariances?
+    - How many could you add?
+    - Try different priors
+- Ex. 4 (Bonus)
+    - Could you expand the model with a fourth test with simulated data?
