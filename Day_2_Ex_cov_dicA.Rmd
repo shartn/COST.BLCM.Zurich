@@ -50,7 +50,7 @@ $P(\theta|data) \propto P(data|\theta)\cdot P(\theta)$
 
 ## Priors for binomial data
 - Likelihood
-$L(\pi) = \binom{n}{k} \pi^k(1-\pi)^{n-x}$ for $\pi \in (0,1)$
+$L(\pi) = \binom{n}{x} \pi^x(1-\pi)^{n-x}$ for $\pi \in (0,1)$
 
 - log likelihood-kernel: 
 $l(\pi)= x log \pi + (n-x)log(1-\pi)$
@@ -61,13 +61,13 @@ $\hat{\pi}_{ML} =\frac{x}{n}$
 
 ## Combining binomial likelihood with a beta prior
 - Likelihood:
-$P(data|\pi) = \binom{n}{k} \pi^k(1-\pi)^{n-x}$ 
-$P(data|\pi) \propto \pi^k(1-\pi)^{n-x}$
+$P(data|\pi) = \binom{n}{x} \pi^x(1-\pi)^{n-x}$ 
+$P(data|\pi) \propto \pi^x(1-\pi)^{n-x}$
 - Beta prior: $Beta(a,b)$
 $P(\pi) \propto \pi^{\alpha-1}(1-\pi)^{\beta-1}$
 - Posterior: 
-$P(\pi|data) \propto \pi^k(1-\pi)^{n-x}\pi^{\alpha-1}(1-\pi)^{\beta-1}$
-$P(\pi|data) \propto \pi^{k+\alpha-1}(1-\pi)^{n-x+\beta-1}$
+$P(\pi|data) \propto \pi^x(1-\pi)^{n-x}\pi^{\alpha-1}(1-\pi)^{\beta-1}$
+$P(\pi|data) \propto \pi^{x+\alpha-1}(1-\pi)^{n-x+\beta-1}$
 $P(\pi|data)=Beta(\pi|x+\alpha,n-x+\beta)$
 
 A pragmatic approach to choosing a prior distribution is to select a member of a specific family of distributions such that the posterior distribution belongs to the same family (conjugate prior distribution).
