@@ -171,7 +171,7 @@ reverts to the classical logistic regression model
 
 ## Ex 8 Covariates 
 - Explore the data set 'echinococcus.xlsx'
-    PCR for either E. multilocularis or E. granulosus, ELISA for both, eggs found by arecoline purgation, Tawnia co-infection, age and sex 
+    PCR for either E. multilocularis or E. granulosus, ELISA for both, eggs found by arecoline purgation, Taenia co-infection, age and sex 
 - Run classical 'risk factor analysis': is sex, Taenia co-infection or age a risk factor for echinococcus (PCR-prevalence, seroprevalence or purges)? Obtain p-values and ORs with confidence intervals. 
 
 
@@ -179,7 +179,10 @@ reverts to the classical logistic regression model
 - Prepare the data set in the correct format (dump, add ones) for BLCM
 - Run a model for three tests (assume a very high sensitivity for arecoline purgation)
 - Try different priors
-- Evidence of conditional dependencies
+- Evidence of conditional dependencies?
 - obtain DICs
+  'runjags.version.deviance.R'
+- Run models with covariates included 
+    - 'runjags_version_cestode_update.R','model.cestode.bug', 'model_without_cestode.bug'
 - Is there evidence for a covariate effect on the prevalence?
-- Compare your finding with Ex.8
+- Compare your findings with Ex.8
