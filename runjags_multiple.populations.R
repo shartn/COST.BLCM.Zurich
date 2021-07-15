@@ -11,12 +11,12 @@ testjags()
 prj.dir <- ("C:\\Users\\shartn\\Documents\\Cost Harmony\\Cost WS 2021\\Trial files\\aje")
 
 # Change working directory
-list.files(prj.dir)
+#list.files(prj.dir)
 
 # Model
-source(file.path(prj.dir, "blcm_2test_mpop_prior_I.R"))
-#other choice: blcm_2test_mpop.R
-#other choice: blcm_2test_mpop_dep_prior_I.R
+source(file.path(prj.dir, "blcm_A.R"))
+#other choice: "blcm_B.R"
+#other choice: "blcm_C.R".R
 
 # Data
 library(tidyverse)
