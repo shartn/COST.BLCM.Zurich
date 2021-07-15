@@ -233,11 +233,11 @@ library('runjags')
 Tally <- as.numeric(twoXtwo)
 TotalTests <- sum(Tally)
 
-prev <- list(chain1=0.05, chain2=0.95)
-se <- list(chain1=c(0.5,0.99), chain2=c(0.99,0.5))
-sp <- list(chain1=c(0.5,0.99), chain2=c(0.99,0.5))
+prev <- list(chain1=0.05, chain2=0.95, chain3=0.99)
+se <- list(chain1=c(0.5,0.99), chain2=c(0.99,0.5), chain3=c(0.98,0.15))
+sp <- list(chain1=c(0.5,0.99), chain2=c(0.99,0.5), chain3=c(0.98,0.15))
 set.seed(1104)
-results <- run.jags('basic_hw.bug', n.chains=2)
+results <- run.jags('basic_hw.bug', n.chains=3)
 ```
 
 
@@ -327,7 +327,7 @@ plot(results.burn.red, layout=c(3,4))
 
 ## What has happened here?
 
-```{r, echo=FALSE}
+```{r, echo=TRUE}
 .RNG.name <- "lecuyer::RngStream"
 .RNG.seed <- list(chain1=98765, chain2=33456)
 ```
@@ -404,6 +404,18 @@ Or:
 But not both!
 
 This allows the test to be useless, but not worse than useless
+
+```{r}
+
+chain1 <- results$mcmc[[1]]
+dim(chain1)
+#chain1[,2]
+chain2 <- results$mcmc[[2]]
+#chain2[,2]
+
+```
+
+
 
 ## Ex 2
 - Can you fix the problem with the label switching?
