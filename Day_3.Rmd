@@ -62,3 +62,11 @@ Beta(27.79, 3.09)
     - 'runjags_version_cestode_update.R','model.cestode.bug', 'model_without_cestode.bug'
 - Is there evidence for a covariate effect on the prevalence?
 - Compare your findings with Ex.8
+ 
+## Ex 10 Group work
+
+- Please have a look at the paper from Kostoulas et al. 'STARD-BLCM: Standards for the Reporting of Diagnostic accuracy studies that use Bayesian Latent Class Models'
+
+- Please discuus in your group for either the Bronsvoort, the Clothier or the Lahuerta paper if they comply with the STARD-BLCM guidelines.
+
+- Please prepare a brief ppt, summarising the paper and assessing compliance with STARD-BLCM
