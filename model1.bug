@@ -1,3 +1,4 @@
+
 ################################################################################################
 ## Model description here.... (originally from Fraser Lewis)
 ################################################################################################
@@ -72,9 +73,8 @@ model {
          + equals(m.short [i,1],0)*equals(m.short[i,2],0)*equals(m.short [i,3],0)*q[i,8]
         ) +(1-equals(valid[i],1)) *(1e-14);
   
- logit(pr[i])<-intercept+slope*m.short[i,6];
-
- #pr[i]<-prc
+ #logit(pr[i])<-intercept+slope*m.short[i,6];
+ pr[i]<-prc
   ## this is a trick as per winbugs manual to allow a bespoke likelihood to be used 
        ## - since in a bernoulli density an observation of 1 has a likelihood of p[i] 
        p[i] <- L[i] / 1;## divided by a constant just to ensure all p's <1
@@ -95,8 +95,8 @@ model {
   s1 ~ dbeta(99.6983,6.1946);       # SE necropsy 95%, >0.9, m 0.95
   s2 ~ dbeta(37.9836,31.2593);      # SE PCR 95%, >0.5, m 0.55
   s3 ~ dbeta(1,1);                  # SE ELISA
-  intercept ~ dnorm(0,0.001);
-  slope ~ dnorm(0,0.001);
+  #intercept~dnorm(0,0.001);
+  #slope~dnorm(0,0.001);
            
   logL<-sum(log(p[1:N])); 
   
