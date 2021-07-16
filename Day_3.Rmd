@@ -22,7 +22,9 @@ set.seed(1104)
 
 
 ## Which values for a prior beta distribution?
-Based on expert opinion
+
+- Based on expert opinion
+ 
     * Betabuster https://shiny.vet.unimelb.edu.au/epi/beta.buster/
     * R package PriorGen
 'Based on the available literature the mean value for the sensitivity of a test is expected to be 0.90 and we can be 95% sure that it is higher than 0.80.'
